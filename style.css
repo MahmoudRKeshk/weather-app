@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 
+    * MARK: global
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffffff;
+    background-color: #0B121E;
+    scrollbar-width:thin;
+    scrollbar-color: #304878 #202B3C;
+}
+.badge {
+    background-color: #304878;
+    color: white;
+    padding: 3px 6px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* 
+    *MARK: animations
+*/
+@keyframes zoomOut {
+    from {
+    opacity: 1;
+    }
+    50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+    opacity: 0;
+    display: none;
+    }
+}
+@keyframes zoomIn {
+    from {
+    transform: scale(0);
+    }
+    to {
+    transform: scale(1.1); /* Zoom in by 150% */
+    }to {
+    transform: scale(1); /* Zoom in by 150% */
+    }
+}
+
+/* 
+    * MARK: grid layout
+*/
+.grid-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 50px;
+    grid-auto-rows: 55px;
+    row-gap: 10px;
+    column-gap: 20px;
+    background-color: #0B121E;
+    border-radius: 15px;
+    box-shadow: -2px -2px 2px 2px #202B3C;
+}
+
+/* 
+    * MARK: navbar
+*/
+nav{
+    grid-column: span 1;
+    grid-row: span 9;
+    background-color: #202B3C;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 5px;
+    max-width: 300px;
+    margin: auto;
+}
+nav .logo{
+    height: 60px;
+    width: 60px;
+    margin: 10px auto;
+}
+nav .logo svg {
+    width: 100%;
+    height: 100%;
+}
+nav > ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 50px;
+    color: #ddd;
+}
+nav > ul > li {
+    margin: 30px auto;
+    padding: 5px 0;
+    width: 95%;
+
+}
+nav > ul > li.active{
+    background-color: #304878;
+    border-radius: 10px;
+}
+nav > ul > li:hover{
+    background-color: #304878;
+    border-radius: 10px;
+}
+nav > ul > li .nav-icon {
+    width: 30px;
+    stroke: #ddd;
+    fill: #ddd;
+    opacity: 80%;
+}
+
+/* 
+    *MARK: search
+*/
+input.search-box{
+    grid-column: 2/span 6;
+    grid-row: 1;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 16px;
+    background-color: #202B3C;
+    color: #ddd;
+}
+input.search-box:focus{
+    border: solid 3px #304878;
+}
+
+
+/* 
+    *MARK: main div(S)
+*/
+.grid-container > div {
+    grid-column: 2/ span 6;
+    grid-row: span 3;
+    background-color: #202B3C;
+    border-radius: 10px;
+}
+.grid-container > div:first-of-type {
+    grid-row: span 3;
+    background-color: inherit;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+.grid-container > div:last-of-type{
+    grid-row: span 2;
+}
+
+/* city name and status */
+.grid-container > div:first-of-type > div:nth-child(1){
+    padding: 10px;
+}
+.grid-container > div:first-of-type > div:nth-child(1) h3{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.grid-container > div:first-of-type > div:nth-child(1) p{
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* temperature value */
+.grid-container > div:first-of-type > div:nth-child(2){
+    grid-row: 2;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+}
+.grid-container > div:first-of-type > div:nth-child(2) p{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/* current weather image */
+.grid-container > div:first-of-type > div:nth-child(3){
+    grid-row: 1/span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-container > div:first-of-type > div:nth-child(3) img{
+    transform: scale(2);
+}
+
+
+/* 
+    * MARK: hourly condition
+*/
+.grid-container .hourly-condition{
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr 1px 1fr 1px 1fr ;
+    position: relative;
+}
+.grid-container .hourly-condition::after{
+    content: "24-h FORECAST";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.7rem;
+    color: #ddd;
+    opacity: 50%;
+}
+.grid-container .hourly-condition .vertical-border {
+    background-color: #ddd;
+    width: 100%;
+    height: 50%;
+    margin-top: 28px;
+}
+.grid-container .hourly-condition .hour{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grid-container .hourly-condition .hour img{
+    width: 50px;
+}
+.grid-container .hourly-condition .hour p:first-of-type{
+    font-size: small;
+    margin-top: 5px;
+    opacity: 80%;
+}
+.grid-container .hourly-condition .hour p:last-of-type{
+    font-size: large;
+    font-weight: 500;
+}
+
+
+
+/* 
+    * MARK: air condition
+*/
+.grid-container .air-conditions{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    padding: 5px;
+}
+.grid-container .air-conditions .condition{
+    display: grid;
+    grid-template-columns: 1.5rem 2fr ;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    column-gap: 5px;
+}
+.air-conditions .condition .condition-icon{
+    width: 1.5rem;
+    stroke: #ddd;
+    fill: #ddd;
+    grid-column: 1;
+    opacity: 50%;
+}
+.air-conditions .condition > p{
+    color: #ddd;
+    font-size: small;
+    opacity: 50%;
+    grid-column: 2;
+    grid-row: 1;
+}
+.air-conditions .condition > h5{
+    grid-row: span 2;
+    grid-column: 1 / span 2;
+    font-weight: 700;
+    font-size: 1.1rem;
+    opacity: 90%;
+    color: #ffffff;
+    margin-left: 2rem;
+}
+
+/* 
+    * MARK: aside
+*/
+.grid-container aside{
+    background-color: #202B3C;
+    border-radius: 15px;
+    grid-column: 8 / span 3;
+    grid-row: 2/ span 8;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    padding-top: 20px;
+    position: relative;
+}
+.grid-container aside::after{
+    content: "7-DAY FORECAST";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.7rem;
+    color: #ddd;
+    opacity: 50%;
+}
+.grid-container aside .daily-condition{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    color: #ddd;
+    position: relative;
+}
+.grid-container aside .daily-condition::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 50%;
+    top: 100%;
+    left: 25%;
+    background-color: #ddd;
+    opacity: 50%;
+}
+.grid-container aside .daily-condition:nth-child(7)::after{
+    background-color: transparent;
+}
+.grid-container aside .daily-condition > p{
+    opacity: 80%;
+    font-size: small;
+    min-width: 40px;
+    text-align: center;
+}
+.grid-container aside .daily-condition > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+}
+.grid-container aside .daily-condition > div img{
+    object-fit: cover;
+}
+
+
+
+
+
+/* 
+    *MARK: modals 
+*/
+.modal{
+    height: 80%;
+    width: 50%;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    background-color: #0B121E;
+    border-radius: 25px;
+    z-index: 2;
+    padding: 10px;
+    overflow-y:auto;
+    scrollbar-width: thin;
+}
+.modal .close-icon{
+    position: absolute;
+    right: 2rem ;
+    top: 2rem;
+    fill: #ddd;
+    cursor: pointer;
+    opacity: 30%;
+    transition: opacity 0.2s linear;
+}
+.modal .close-icon:hover{
+    opacity: 100%;
+}
+.modal h2{
+    margin: 10px;
+    font-size: 2rem;
+}
+.show{
+    animation: zoomIn 0.4s ease forwards;
+}
+.hide{
+    animation: zoomOut 0.3s ease forwards;
+}
+.d-none{
+    display: none;
+}
+.blur-layer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+}
+
+
+
+/* 
+    *MARK: cities modal
+*/
+
+.modal .city-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+.modal .city{
+    width: 80%;
+    margin: auto;
+    border-radius: 25px;
+    background-color: #202B3C;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.modal .city:hover{
+    transform: scale(1.05);
+}
+.modal .city-selected{
+    background-color: #0B121E;
+    border: solid 2px #304878;
+}
+.modal .city img{
+    background-color: #0B121E;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.modal .city-selected img{
+    background-color: #202B3C;
+}
+.modal .city > div{
+    padding: 10px;
+}
+.modal .city > div p:nth-child(1){
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.modal .city > div p:nth-child(2){
+    font-size: small;
+    font-weight: 400;
+    opacity: 50%;
+}
+.modal .city > p:last-of-type{
+    margin-left: auto;
+    font-size: 2rem;
+    font-weight:500;
+}
+
+
+
+/* 
+    ? MARK: Responsive md
+*/
+
+@media screen and (max-width:1000px){
+
+    .grid-container{
+        grid-template-columns: repeat(5, 1fr);
+        margin: 0;
+        border-radius: 0;
+    }
+    input.search-box{
+        grid-column: 2 / span 4;
+    }
+    .grid-container > div {
+        grid-column: 2 / span 4;
+    }
+    .grid-container aside{
+        grid-column: 1 / span 5;
+        grid-row: span 3;
+        grid-template-columns: repeat(7,1fr);
+        grid-template-rows: 1fr;
+    }
+    .grid-container aside .daily-condition{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-container aside .daily-condition::after{
+        height: 50%;
+        width: 1px;
+        top: 25%;
+        left: 100%;
+    }
+    .grid-container aside .daily-condition > div{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal{
+        width: 80%;
+        left: 10%;
+    }
+}
+
+
+/* 
+    * MARK: Responsive sm
+*/
+@media screen and (max-width:750px){
+    
+    .grid-container > div:nth-last-of-type(2) {
+        grid-column: 2 / span 6;
+        grid-row: span 5;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    } 
+    .grid-container .hourly-condition {
+        grid-template-rows: 1fr 1px 1fr 1px 1fr 1px 1fr 1px 1fr 1px 1fr ;
+        grid-template-columns: 1fr;
+    }
+    .grid-container .hourly-condition .hour{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+    .grid-container .hourly-condition .vertical-border {
+        background-color: #ddd;
+        opacity: 25%;
+        width: 80%;
+        height: 1px;
+        margin: auto;
+        margin-top: 0;
+    }
+    .grid-container .air-conditions{
+        grid-column: 2/span 6;
+    }
+    .grid-container aside{
+        grid-column: 2/span 6;
+        overflow-x: scroll;
+        scrollbar-width:thin;
+    }
+    .grid-container aside::-webkit-scrollbar-corner {
+        display: none;
+    }
+    .modal{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+}

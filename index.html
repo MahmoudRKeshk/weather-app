@@ -7,7 +7,220 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <script src="./script.js"></script>
+    <div class="grid-container">
+
+        <!-- *navbar -->
+        <nav>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M298.667 192c0 11.026-11.13 20.442-13.849 30.61-2.812 10.515 2.035 24.213-3.293 33.419-5.404 9.337-19.742 11.95-27.32 19.528-7.579 7.576-10.194 21.912-19.53 27.313-9.206 5.326-22.903.476-33.417 3.287C191.095 308.873 181.686 320 170.667 320c-11.026 0-20.442-11.129-30.61-13.848-10.515-2.813-24.213 2.034-33.42-3.294-9.336-5.404-11.95-19.741-19.528-27.32-7.576-7.578-21.911-10.193-27.313-19.53-5.325-9.206-.476-22.902-3.286-33.417C53.794 212.428 42.667 203.02 42.667 192c0-11.026 11.129-20.442 13.848-30.61 2.812-10.515-2.035-24.213 3.293-33.419 5.405-9.337 19.742-11.95 27.321-19.528 7.578-7.576 10.193-21.912 19.53-27.313 9.206-5.326 22.902-.476 33.417-3.287C150.238 75.127 159.648 64 170.666 64c11.027 0 20.442 11.129 30.61 13.848 10.516 2.813 24.214-2.034 33.42 3.294 9.337 5.404 11.95 19.741 19.528 27.32 7.576 7.578 21.912 10.193 27.313 19.53 5.326 9.206.476 22.902 3.286 33.417 2.716 10.163 13.844 19.572 13.844 30.591z" style="fill:#ffc200"/><circle cx="170.667" cy="192" r="85.333" style="fill:#f98b00"/><ellipse cx="138.667" cy="160" rx="40.468" ry="20.234" transform="rotate(-45 138.667 160)" style="fill:#ffa300"/><path d="M447.257 302.355A140.188 140.188 0 0 0 448 288a138.667 138.667 0 0 0-138.667-138.667c-64.945 0-119.306 44.713-134.375 104.989a95.855 95.855 0 1 0-57.625 172.345h309.334a63.833 63.833 0 0 0 20.59-124.312z" style="fill:#bcc5ff"/><path d="M384 277.333a106.546 106.546 0 0 0-210.36-24.099 95.892 95.892 0 1 0-56.307 173.433c43.3 0 79.476-28.856 91.44-68.246C227.357 374.15 251.081 384 277.333 384a105.47 105.47 0 0 0 50.22-13.105A63.88 63.88 0 1 0 384 277.333z" style="fill:#d6deff"/><ellipse cx="373.333" cy="330.667" rx="37.65" ry="25.1" transform="rotate(-45 373.333 330.667)" style="fill:#eff2ff"/><ellipse cx="245.333" cy="245.333" rx="62.75" ry="41.834" transform="rotate(-45 245.333 245.333)" style="fill:#eff2ff"/><ellipse cx="85.333" cy="320" rx="50.2" ry="33.467" transform="rotate(-45 85.333 320)" style="fill:#eff2ff"/></svg>
+            </div>
+            <ul class="nav-icons">
+                <li id="weather-nav-item" class="active nav-item">
+                    
+                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M20.33 2a9.72 9.72 0 0 0-6.12 2.17A5 5 0 0 0 6 7.59a7.08 7.08 0 0 0-4 6.23v.08a7 7 0 0 0 .56 2.74 2.15 2.15 0 0 0 .11.22A7.11 7.11 0 0 0 9.1 21h12.56a7.05 7.05 0 0 0 6-3.32A9.38 9.38 0 0 0 30 11.5 9.6 9.6 0 0 0 20.33 2zM11 5a3 3 0 0 1 1.8.6 9.58 9.58 0 0 0-1.13 1.69 7.43 7.43 0 0 0-2.48-.43 7.93 7.93 0 0 0-1 .07A3 3 0 0 1 11 5zm15.11 11.42a.71.71 0 0 0-.1.14A5.08 5.08 0 0 1 21.66 19H9.1a5.13 5.13 0 0 1-4.62-2.95l-.05-.11v-.1A4.74 4.74 0 0 1 4 14v-.14a5.15 5.15 0 0 1 5.19-5 5.27 5.27 0 0 1 2.52.64 1 1 0 0 0 .83.05 1 1 0 0 0 .59-.55 7.68 7.68 0 0 1 7.2-5A7.59 7.59 0 0 1 28 11.5a7.4 7.4 0 0 1-1.89 4.92z"/><path d="M23.55 6.17a1 1 0 0 0-1.1 1.66A4.59 4.59 0 0 1 24 12.76a1 1 0 0 0 .76 1.24H25a1 1 0 0 0 1-.76 6.51 6.51 0 0 0-2.45-7.07zM11 23a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1zM16 23a1 1 0 0 0-1 1v2.5a1 1 0 0 0 2 0V24a1 1 0 0 0-1-1zM21 23a1 1 0 0 0-1 1v3.75a1 1 0 0 0 2 0V24a1 1 0 0 0-1-1z"/></svg>
+                    <p>weather</p>
+                </li>
+                <li id="cities-nav-item" class="nav-item">
+                    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g data-name="to do list android app aplication phone"><path d="M30.56 8.47a8 8 0 0 0-7-7 64.29 64.29 0 0 0-15.06 0 8 8 0 0 0-7 7 64.29 64.29 0 0 0 0 15.06 8 8 0 0 0 7 7 64.29 64.29 0 0 0 15.06 0 8 8 0 0 0 7-7 64.29 64.29 0 0 0 0-15.06zm-2 14.83a6 6 0 0 1-5.28 5.28 63.65 63.65 0 0 1-14.6 0 6 6 0 0 1-5.26-5.28 63.65 63.65 0 0 1 0-14.6A6 6 0 0 1 8.7 3.42a63.65 63.65 0 0 1 14.6 0 6 6 0 0 1 5.28 5.28 63.65 63.65 0 0 1 0 14.6z"/><path d="M11 5H9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zM9 9V7h2v2zM11 13H9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm-2 4v-2h2v2zM11 21H9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2zm-2 4v-2h2v2zM24 7h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zM24 15h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2zM24 23h-8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2z"/></g></svg>
+                    <p>cities</p>
+                </li>
+                <li id="setting-nav-item" class="nav-item">
+                    <svg class="nav-icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve"><style></style><path d="M16 19a1 1 0 0 1-1-1V4a1 1 0 1 1 2 0v14a1 1 0 0 1-1 1zM16 29a1 1 0 0 1-1-1v-7.072a1 1 0 1 1 2 0V28a1 1 0 0 1-1 1zM6 13a1 1 0 0 1-1-1V4a1 1 0 1 1 2 0v8a1 1 0 0 1-1 1zM6 29a1 1 0 0 1-1-1V14.898a1 1 0 1 1 2 0V28a1 1 0 0 1-1 1zM26 10a1 1 0 0 1-1-1V4a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1zM26 29a1 1 0 0 1-1-1V12a1 1 0 1 1 2 0v16a1 1 0 0 1-1 1z"/><path d="M29 10h-6a1 1 0 1 1 0-2h6a1 1 0 1 1 0 2zM19 19h-6a1 1 0 1 1 0-2h6a1 1 0 1 1 0 2zM9 13H3a1 1 0 1 1 0-2h6a1 1 0 1 1 0 2z"/></svg>
+                    <p>setting</p>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- *search box -->
+        <input class="search-box" type="text" placeholder="search with city name"></input>
+        
+        <!-- *main  -->
+        <div>
+            <div>
+                <h3>Madrid</h3>
+                <p>chances of rain: 35%</p>
+            </div>
+            <div>
+                <p>33°</p>
+            </div>
+            <div>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+            </div>
+        </div>
+
+        <!-- *hourly condition -->
+        <div class="hourly-condition">
+            <div class="hour">
+                <p class="badge">06:30 Am</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+                <p >33°</p>
+            </div>
+            <div class="vertical-border"></div>
+            <div class="hour">
+                <p class="badge">06:30 Am</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+                <p>33°</p>
+            </div>
+            <div class="vertical-border"></div>
+            <div class="hour">
+                <p class="badge">06:30 Am</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+                <p>33°</p>
+            </div>
+            <div class="vertical-border"></div>
+            <div class="hour">
+                <p class="badge">06:30 Am</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+                <p>33°</p>
+            </div>
+            <div class="vertical-border"></div>
+            <div class="hour">
+                <p class="badge">06:30 Am</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+                <p>33°</p>
+            </div>
+            <div class="vertical-border"></div>
+            <div class="hour">
+                <p class="badge">06:30 Am</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/113.png" alt="current temperature icon">
+                <p>33°</p>
+            </div>
+        </div>
+
+        <!-- *air condition -->
+        <div class="air-conditions">
+            <div class="condition">
+                    <p>wind</p>
+                    <svg class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2"><path d="M17 29.307h18M39.5 29.307h10.848A5.652 5.652 0 0 0 56 23.655v-.003A5.651 5.651 0 0 0 50.348 18h-4.372M17 34.693h8M33.446 34.693h16.902A5.651 5.651 0 0 1 56 40.345v.003A5.651 5.651 0 0 1 50.348 46h-4.372M8 17.921h22.726a2.719 2.719 0 0 0 2.72-2.72V15.2a2.719 2.719 0 0 0-2.72-2.72h-2.291M8 46.079h22.726a2.719 2.719 0 0 1 2.72 2.72v.001a2.719 2.719 0 0 1-2.72 2.72h-2.291" style="fill:none;stroke-width:3px"/></svg>
+                    
+                    <h5>0.2 km/h</h5>
+            </div>
+            <div class="condition">
+                <svg class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M20.33 2a9.72 9.72 0 0 0-6.12 2.17A5 5 0 0 0 6 7.59a7.08 7.08 0 0 0-4 6.23v.08a7 7 0 0 0 .56 2.74 2.15 2.15 0 0 0 .11.22A7.11 7.11 0 0 0 9.1 21h12.56a7.05 7.05 0 0 0 6-3.32A9.38 9.38 0 0 0 30 11.5 9.6 9.6 0 0 0 20.33 2zM11 5a3 3 0 0 1 1.8.6 9.58 9.58 0 0 0-1.13 1.69 7.43 7.43 0 0 0-2.48-.43 7.93 7.93 0 0 0-1 .07A3 3 0 0 1 11 5zm15.11 11.42a.71.71 0 0 0-.1.14A5.08 5.08 0 0 1 21.66 19H9.1a5.13 5.13 0 0 1-4.62-2.95l-.05-.11v-.1A4.74 4.74 0 0 1 4 14v-.14a5.15 5.15 0 0 1 5.19-5 5.27 5.27 0 0 1 2.52.64 1 1 0 0 0 .83.05 1 1 0 0 0 .59-.55 7.68 7.68 0 0 1 7.2-5A7.59 7.59 0 0 1 28 11.5a7.4 7.4 0 0 1-1.89 4.92z"/><path d="M23.55 6.17a1 1 0 0 0-1.1 1.66A4.59 4.59 0 0 1 24 12.76a1 1 0 0 0 .76 1.24H25a1 1 0 0 0 1-.76 6.51 6.51 0 0 0-2.45-7.07zM11 23a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1zM16 23a1 1 0 0 0-1 1v2.5a1 1 0 0 0 2 0V24a1 1 0 0 0-1-1zM21 23a1 1 0 0 0-1 1v3.75a1 1 0 0 0 2 0V24a1 1 0 0 0-1-1z"/></svg>
+                    <p>rain chance</p>
+                    <h5>12%</h5>
+            </div>
+            <div class="condition">
+                <svg class="condition-icon" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><defs><style>.cls-1{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}</style></defs><path class="cls-1" d="M28 31.26V8a4 4 0 0 0-8 0v23.26a7 7 0 1 0 8 0zM26 13h2M26 17h2M26 21h2M26 25h2"/><circle class="cls-1" cx="24" cy="37" r="1"/><path class="cls-1" d="M-88-632h700V68H-88z"/></svg>
+                    <p>real feel</p>
+                    <h5>30°</h5>
+            </div>
+            <div class="condition">
+                <svg class="condition-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 12a5 5 0 1 1 5 5 5 5 0 0 1-5-5zm5-7a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1zm-1 15v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-2 0zm10-9h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2zM3 13h1a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2zm14.657-5.657a1 1 0 0 0 .707-.293l.707-.707a1 1 0 1 0-1.414-1.414l-.707.707a1 1 0 0 0 .707 1.707zM5.636 16.95l-.707.707a1 1 0 1 0 1.414 1.414l.707-.707a1 1 0 0 0-1.414-1.414zm11.314 0a1 1 0 0 0 0 1.414l.707.707a1 1 0 0 0 1.414-1.414l-.707-.707a1 1 0 0 0-1.414 0zM5.636 7.05A1 1 0 0 0 7.05 5.636l-.707-.707a1 1 0 0 0-1.414 1.414z"/></svg>
+                    <p>UV</p>
+                    <h5>3</h5>
+            </div>
+        </div>
+
+        <!-- * aside menu -->
+        <aside>
+            <div class="daily-condition">
+                <p >today</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge">36/22</p>
+            </div>
+            <div class="daily-condition">
+                <p >wed</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge">36/22</p>
+            </div>
+            <div class="daily-condition">
+                <p >thu</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge"> 36/22</p>
+            </div>
+            <div class="daily-condition">
+                <p >fri</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge">36/22</p>
+            </div>
+            <div class="daily-condition">
+                <p >sat</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge">36/22</p>
+            </div>
+            <div class="daily-condition">
+                <p >sun</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge">36/22</p>
+            </div>
+            <div class="daily-condition">
+                <p >mon</p>
+                <div>
+                    <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                    <p>clear</p>
+                </div>
+                <p class="badge">36/22</p>
+            </div>
+            
+        </aside>
+    </div>
+
+    <div class="modal d-none" id="cities-modal" >
+        <div class="close-icon" id="cities-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.828" height="17.828"><path d="m2.828 17.828 6.086-6.086L15 17.828 17.828 15l-6.086-6.086 6.086-6.086L15 0 8.914 6.086 2.828 0 0 2.828l6.085 6.086L0 15l2.828 2.828z"/></svg>
+        </div>
+        <h2>
+            cities
+        </h2>
+        <div class="city-container">
+            <div class="city">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                <div>
+                    <p>Madrid</p>
+                    <p>12:10Am</p>
+                </div>
+                <p>31°</p>
+            </div>
+            <div class="city">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                <div>
+                    <p>Madrid</p>
+                    <p>12:10Am</p>
+                </div>
+                <p>31°</p>
+            </div>
+            <div class="city">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/113.png" alt="">
+                <div>
+                    <p>Madrid</p>
+                    <p>12:10Am</p>
+                </div>
+                <p>31°</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- setting modal -->
+    <div class="modal d-none" id="setting-modal" >
+        <div class="close-icon" id="setting-modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17.828" height="17.828"><path d="m2.828 17.828 6.086-6.086L15 17.828 17.828 15l-6.086-6.086 6.086-6.086L15 0 8.914 6.086 2.828 0 0 2.828l6.085 6.086L0 15l2.828 2.828z"/></svg>
+        </div>
+        <h2>
+            settings
+        </h2>
+    </div>
+    <div class="blur-layer d-none" id="blur-layer">
+
+    </div>
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
